@@ -1,6 +1,6 @@
 Hello World!!!
 
-I'm interested in building IA programming skills
+I'm interested in building AI programming skills
 
 Maybe someday Skynet gonna be real!
 
