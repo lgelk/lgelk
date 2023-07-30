@@ -4,7 +4,7 @@ import threading
 import time
 
 def iniciar_tarefa():
-    # Defina a tarefa que deseja realizar aqui. Por exemplo, um loop com atualizações de texto.
+    # Loop com atualizações de texto.
     for i in range(11):
         time.sleep(1)  # Simulação de uma tarefa que leva 1 segundo para ser concluída.
         texto_atual.set(f"Progresso: {i * 10}%")
@@ -14,12 +14,11 @@ def iniciar_tarefa():
 def sair():
     root.destroy()
 
-# Configuração da janela principal
+# Janela principal
 root = tk.Tk()
 root.title("Projeto Automatização Financeiro")
-root.geometry("640x480")  # Tamanho da janela definido para 640x480 pixels
-# Definindo o ícone personalizado
-root.iconbitmap("C:\icon.ico")  # Substitua "icone.ico" pelo nome do seu arquivo .ico ou .png
+root.geometry("640x480") 
+root.iconbitmap("icon.ico") 
 
 # Frame para a área de texto
 frame_texto = tk.Frame(root, padx=10, pady=10)
@@ -31,11 +30,11 @@ label_texto.pack()
 
 # Frame para os botões
 frame_botoes = tk.Frame(root, padx=10, pady=10)
-frame_botoes.pack(side=tk.BOTTOM)  # Colocando os botões na parte inferior da janela
+frame_botoes.pack(side=tk.BOTTOM)  # Botoes
 
 # Barra de Progresso
 progresso = ttk.Progressbar(root, orient="horizontal", length=300, mode="determinate")
-progresso.pack(side=tk.BOTTOM, pady=10)  # Colocando a barra de progresso acima dos botões
+progresso.pack(side=tk.BOTTOM, pady=10)  # barra de progresso
 
 # Botão "Iniciar Tarefa"
 botao_iniciar = tk.Button(frame_botoes, text="Iniciar Tarefa", command=lambda: threading.Thread(target=iniciar_tarefa).start())
